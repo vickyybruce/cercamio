@@ -1,0 +1,220 @@
+@import "../utilidades/variables"; 
+@import "../utilidades/mixin"; 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url('../img/mapa.jpg'); /* Ruta relativa a tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen se quede fija mientras haces scroll */
+    height: 100vh; /* Asegura que el fondo cubra la altura completa de la ventana */
+    width: 100vw; /* Asegura que el fondo cubra el ancho completo de la ventana */
+    z-index: -1; /* Mantiene la imagen detrás de todos los elementos */
+    
+
+}
+
+* {
+    font-family: 'Lexend Deca', sans-serif !important;
+}
+
+main {
+    flex: 1; 
+}
+
+// estilos header
+
+.header {
+    @include flex-container(row, space-between, center);
+    padding: 5px 10px;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border-light;
+    height: 50px;
+
+    .inicio { // Selecciona el enlace
+        text-decoration: none; // Eliminar subrayado
+        color: black; // Establecer color negro
+
+        .brand-title { // Asegúrate de que la clase esté aquí
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold; // Hacer el texto en negrita
+            color: black; // Asegurarte de que el color sea negro
+        }
+    }
+}
+a {
+    color: black !important; // Usar !important para forzar el color negro
+    text-decoration: none; // Eliminar subrayado
+    margin-right: 20px;
+}
+
+// estilos navbar
+.navbar {
+    padding: 10px 20px;
+
+    .navbar-brand {
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+    }
+
+    form.d-flex {
+        @include flex-container(row, center, center);
+
+        .search-input {
+            flex: 1;
+            width: 100%;
+            min-width: 200px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        button.btn-outline-success {
+            flex: 0 1 auto; 
+        }
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: $color-gray;
+    }
+}
+
+// main estilos
+.container {
+    @include container(90%, 1200px);
+}
+
+.header3 {
+    @include text-center;
+    margin-bottom: 2rem;
+}
+
+.main-content {
+    @include flex-container(row, space-between, flex-start);
+    margin-top: 20px;
+
+    .announcement,
+    .reviews {
+        background-color: $color-announcement-bg;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        
+    }
+    h2.text-center {
+        font-size: 6rem; // Puedes ajustarlo al tamaño deseado
+        font-weight: bold; // Opcional, si deseas hacer el texto más grueso
+    }
+
+    .video-thumbnail1,
+    .review-thumbnail {
+        background-color: $color-thumbnail-bg;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+
+        &.video-thumbnail1 {
+            height: 200px;
+        }
+
+        &.review-thumbnail {
+            height: 150px;
+        }
+    }
+
+    .reviews {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3 {
+            color: $color-gray-dark;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+}
+
+// footer estilos
+footer {
+    background-color: $color-footer-bg;
+    color: $color-footer-text;
+    padding: 1rem 0;
+    text-align: center;
+
+    a {
+        color: $color-footer-text;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// media queries
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .header3 {
+        h1 {
+            font-size: 1.5rem; 
+        }
+    }
+
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 576px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .search-input {
+        width: 100%; 
+    }
+}
+.section-block {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 15px; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px; 
+    margin-bottom: 20px; 
+}
+body {
+    background-image: url('../img/mapa.jpg'); /* Asegúrate de que la ruta sea correcta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  html, body {
+    height: 100%;
+  }
+  .section-block {
+    background-color: transparent;
+  }

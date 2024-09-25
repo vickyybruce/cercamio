@@ -1,0 +1,55 @@
+@mixin flex-container($flex-direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin grid-layout($columns, $gap: 10px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($columns, 1fr));
+    gap: $gap;
+  }
+  
+  @mixin responsive-text($size-lg, $size-md: null, $size-sm: null) {
+    font-size: $size-lg;
+    
+    @media (max-width: 768px) {
+      font-size: if($size-md != null, $size-md, $size-lg);
+    }
+    
+    @media (max-width: 576px) {
+      font-size: if($size-sm != null, $size-sm, $size-md);
+    }
+  }
+  
+  @mixin box-shadow {
+    box-shadow: $box-shadow;
+  }
+  
+  @mixin border-radius($radius: $border-radius) {
+    border-radius: $radius;
+  }
+  
+  @mixin text-center {
+    text-align: center;
+  }
+  
+  @mixin padding($size: $padding) {
+    padding: $size;
+  }
+  
+  @mixin button-style {
+    background-color: $primary-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    cursor: pointer;
+  }
+  
+  @mixin container($width: 90%, $max-width: 1200px) {
+    width: $width;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+  

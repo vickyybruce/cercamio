@@ -1,0 +1,184 @@
+@import "../utilidades/variables"; 
+@import "../utilidades/mixin"; 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: $color-background;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+* {
+    font-family: 'Lexend Deca', sans-serif !important;
+}
+
+main {
+    flex: 1;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px; 
+}
+
+// estilos header
+.header {
+    @include flex-container(row, space-between, center);
+    padding: 5px 10px;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border-light;
+    height: 50px;
+
+    .inicio { // Selecciona el enlace
+        text-decoration: none; // Eliminar subrayado
+        color: black; // Establecer color negro
+
+        .brand-title { // Asegúrate de que la clase esté aquí
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold; // Hacer el texto en negrita
+            color: black; // Asegurarte de que el color sea negro
+        }
+    }
+}
+a {
+    color: black !important; // Usar !important para forzar el color negro
+    text-decoration: none; // Eliminar subrayado
+    margin-right: 20px;
+}
+
+// estilos navbar
+.navbar {
+    @include flex-container(row, space-between, center);
+    padding: 10px 20px;
+    background-color: $color-black;
+    color: $color-white;
+
+    .navbar-brand {
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: $color-white;
+        }
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: $color-white;
+    }
+
+    form.d-flex {
+        @include flex-container(row, center, center);
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        button.btn-outline-success {
+            flex: 0 1 auto; 
+        }
+    }
+}
+
+// estilos sections
+.recently-added, .popular {
+    margin: 20px 0;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: $color-white;
+    }
+
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+
+        .post {
+            background-color: $color-white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            .thumbnail {
+                width: 100%;
+                height: 150px;
+                background-color: $color-thumbnail-bg; // placeholder color
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .actions {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    cursor: pointer;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// footer estilos
+footer {
+    background-color: $color-footer-bg;
+    color: $color-footer-text;
+    padding: 1rem 0;
+    text-align: center;
+
+    a {
+        color: $color-footer-text;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// media queries
+@media (max-width: 768px) {
+    .header2 h1 {
+        font-size: 1.5rem; 
+    }
+
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 576px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .search-input {
+        width: 100%; 
+    }
+}

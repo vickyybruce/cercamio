@@ -1,0 +1,210 @@
+@import "../utilidades/variables"; 
+@import "../utilidades/mixin"; 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: $color-background;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+* {
+    font-family: 'Lexend Deca', sans-serif !important;
+}
+
+main {
+    flex: 1; 
+}
+
+// estilos header
+.header {
+    @include flex-container(row, space-between, center);
+    padding: 5px 10px;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border-light;
+    height: 50px;
+
+    .inicio { // Selecciona el enlace
+        text-decoration: none; // Eliminar subrayado
+        color: black; // Establecer color negro
+
+        .brand-title { // Asegúrate de que la clase esté aquí
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold; // Hacer el texto en negrita
+            color: black; // Asegurarte de que el color sea negro
+        }
+    }
+}
+a {
+    color: black !important; // Usar !important para forzar el color negro
+    text-decoration: none; // Eliminar subrayado
+    margin-right: 20px;
+}
+// estilos navbar
+.navbar {
+    @include flex-container(row, space-between, center);
+    padding: 10px 20px;
+    background-color: $color-black;
+    color: $color-white;
+
+    .navbar-brand {
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: $color-white;
+        }
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: $color-gray;
+    }
+
+    form.d-flex {
+        @include flex-container(row, center, center);
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        button.btn-outline-success {
+            flex: 0 1 auto; 
+        }
+    }
+}
+
+// estilos profile-section
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: $color-thumbnail-bg; // Color de marcador de posición
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra
+    }
+}
+
+// estilos textarea
+.description {
+    width: 100%;
+    height: 150px; // Cambiar a una altura más larga
+    padding: 10px;
+    border: 1px solid $color-border-light;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s; // Transición suave
+
+    &:focus {
+        border-color: $color-primary; // Color en foco
+        outline: none; // Quitar contorno predeterminado
+    }
+}
+
+// estilos button-container
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+
+    .edit-profile {
+        background-color: $color-gray;
+        color: $color-white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s; // Transición suave
+
+        
+    }
+}
+
+// estilos about you
+.about {
+    @include flex-container(column, center, center);
+    
+    .button-row {
+        @include flex-container(row, space-around, center);
+        width: 100%;
+        margin-top: 20px;
+
+        .about-button {
+            background-color: $color-gray;
+            color: $color-white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px; // Añadir margen horizontal entre los botones
+            
+            
+        }
+    }
+}
+
+// footer estilos
+footer {
+    background-color: $color-footer-bg;
+    color: $color-footer-text;
+    padding: 1rem 0;
+    text-align: center;
+
+    a {
+        color: $color-footer-text;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// media queries
+@media (max-width: 768px) {
+    .header1 h1 {
+        font-size: 1.5rem; 
+    }
+
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 576px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .search-input {
+        width: 100%; 
+    }
+}
