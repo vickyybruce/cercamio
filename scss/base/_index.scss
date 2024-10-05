@@ -10,14 +10,14 @@
 
 
 body {
-    background-image: url('../img/mapa.jpg'); /* Ruta relativa a tu imagen */
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Hace que la imagen se quede fija mientras haces scroll */
-    height: 100vh; /* Asegura que el fondo cubra la altura completa de la ventana */
-    width: 100vw; /* Asegura que el fondo cubra el ancho completo de la ventana */
-    z-index: -1; /* Mantiene la imagen detrás de todos los elementos */
+    background-image: url('../img/mapa.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    height: 100vh; 
+    width: 100vw; 
+    z-index: -1; 
     
 
 }
@@ -39,21 +39,21 @@ main {
     border-bottom: 1px solid $color-border-light;
     height: 50px;
 
-    .inicio { // Selecciona el enlace
-        text-decoration: none; // Eliminar subrayado
-        color: black; // Establecer color negro
+    .inicio { 
+        text-decoration: none; 
+        color: black; 
 
-        .brand-title { // Asegúrate de que la clase esté aquí
+        .brand-title { 
             margin: 0;
             font-size: 18px;
-            font-weight: bold; // Hacer el texto en negrita
-            color: black; // Asegurarte de que el color sea negro
+            font-weight: bold; 
+            color: black; 
         }
     }
 }
 a {
-    color: black !important; // Usar !important para forzar el color negro
-    text-decoration: none; // Eliminar subrayado
+    color: black !important; 
+    text-decoration: none; 
     margin-right: 20px;
 }
 
@@ -95,6 +95,7 @@ a {
 // main estilos
 .container {
     @include container(90%, 1200px);
+    
 }
 
 .header3 {
@@ -115,8 +116,8 @@ a {
         
     }
     h2.text-center {
-        font-size: 6rem; // Puedes ajustarlo al tamaño deseado
-        font-weight: bold; // Opcional, si deseas hacer el texto más grueso
+        font-size: 6rem; 
+        font-weight: bold; 
     }
 
     .video-thumbnail1,
@@ -204,7 +205,7 @@ footer {
     margin-bottom: 20px; 
 }
 body {
-    background-image: url('../img/mapa.jpg'); /* Asegúrate de que la ruta sea correcta */
+    background-image: url('../img/mapa.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

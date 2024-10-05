@@ -33,21 +33,21 @@ main {
     border-bottom: 1px solid $color-border-light;
     height: 50px;
 
-    .inicio { // Selecciona el enlace
-        text-decoration: none; // Eliminar subrayado
-        color: black; // Establecer color negro
+    .inicio { 
+        text-decoration: none; 
+        color: black; 
 
-        .brand-title { // Asegúrate de que la clase esté aquí
+        .brand-title { 
             margin: 0;
             font-size: 18px;
-            font-weight: bold; // Hacer el texto en negrita
-            color: black; // Asegurarte de que el color sea negro
+            font-weight: bold; 
+            color: black; 
         }
     }
 }
 a {
-    color: black !important; // Usar !important para forzar el color negro
-    text-decoration: none; // Eliminar subrayado
+    color: black !important; 
+    text-decoration: none; 
     margin-right: 20px;
 }
 
@@ -103,12 +103,12 @@ a {
 
     .grid2 {
         max-width: 800px; 
-        margin: 0 auto; // Centrar el contenedor en la pantalla
+        margin: 0 auto; 
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 15px;
-        justify-items: center; // Centrar elementos de la cuadrícula horizontalmente
-        justify-content: center; // Centrar la cuadrícula en su contenedor
+        justify-items: center; 
+        justify-content: center; 
     }
 }
 

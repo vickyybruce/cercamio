@@ -34,21 +34,21 @@ main {
     border-bottom: 1px solid $color-border-light;
     height: 50px;
 
-    .inicio { // Selecciona el enlace
-        text-decoration: none; // Eliminar subrayado
-        color: black; // Establecer color negro
+    .inicio { 
+        text-decoration: none; 
+        color: black; 
 
-        .brand-title { // Asegúrate de que la clase esté aquí
+        .brand-title { 
             margin: 0;
             font-size: 18px;
-            font-weight: bold; // Hacer el texto en negrita
-            color: black; // Asegurarte de que el color sea negro
+            font-weight: bold; 
+            color: black; 
         }
     }
 }
 a {
-    color: black !important; // Usar !important para forzar el color negro
-    text-decoration: none; // Eliminar subrayado
+    color: black !important; 
+    text-decoration: none; 
     margin-right: 20px;
 }
 // estilos navbar
@@ -98,28 +98,28 @@ a {
     
 
     .profile-picture {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
-        background-color: $color-thumbnail-bg; // Color de marcador de posición
+        background-color: $color-thumbnail-bg; 
         margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     }
 }
 
 // estilos textarea
 .description {
     width: 100%;
-    height: 150px; // Cambiar a una altura más larga
+    height: 150px; 
     padding: 10px;
     border: 1px solid $color-border-light;
     border-radius: 5px;
     margin-bottom: 20px;
-    transition: border-color 0.3s; // Transición suave
+    transition: border-color 0.3s; 
 
     &:focus {
-        border-color: $color-primary; // Color en foco
-        outline: none; // Quitar contorno predeterminado
+        border-color: $color-primary; 
+        outline: none; 
     }
 }
 
@@ -137,31 +137,36 @@ a {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s; // Transición suave
+        transition: background-color 0.3s; 
 
         
     }
 }
 
 // estilos about you
-.about {
-    @include flex-container(column, center, center);
-    
-    .button-row {
-        @include flex-container(row, space-around, center);
-        width: 100%;
-        margin-top: 20px;
+.about .button-row {
+    @include flex-container(row, space-around, center);
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap; 
 
-        .about-button {
-            background-color: $color-gray;
-            color: $color-white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 10px; // Añadir margen horizontal entre los botones
-            
-            
+    .about-button {
+        background-color: $color-gray;
+        color: $color-white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px 5px; 
+
+        @media (max-width: 768px) {
+            flex: 1 1 45%; 
+            margin: 10px 0;
+        }
+
+        @media (max-width: 576px) {
+            flex: 1 1 100%; 
+            margin: 10px 0; 
         }
     }
 }
